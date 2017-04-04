@@ -12,6 +12,9 @@ rm -rf node-v6.10.1-linux-x64.tar
 printf "export NODE_HOME=/usr/local/node/node-v6.10.1-linux-x64\nexport PATH=\$PATH:\$NODE_HOME/bin\n" >> /etc/profile
 source /etc/profile
 
+###################################################
+# identify setting and #4~ #13 is ReactJS setting #
+###################################################
 git --version
 node --version
 npm --version
