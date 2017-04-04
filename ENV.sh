@@ -8,6 +8,26 @@ select yn in "Yes" "No" ; do
 
 Yes)
 
+#Oracle 11xe install
+PWD=`pwd`
+OCinstall(){
+	yum install -y libaio bc flex;
+	rpm -ivh $PWD/Disk1/oracle-xe-11.2.0-1.0.x86_64.rpm;
+	\cp -b $PWD/oracle-xe /etc/init.d/oracle-xe;
+
+	/etc/init.d/oracle-xe configure;
+
+	echo "export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe" >> /etc/bashrc;
+	echo "export ORACLE_SID=XE" >> /etc/bashrc;
+	echo "export NLS_LANG=\`\$ORACLE_HOME/bin/nls_lang.sh\`" >> /etc/bashrc;
+	echo "export PATH=\$ORACLE_HOME/bin:\$PATH" >> /etc/bashrc;
+	source /etc/bashrc
+	echo "ORACLE x11g 설치가 완료되었습니다.";
+	echo "터미널을 다시 실행해 주세요";
+}
+OCinstall
+
+
 #node JS and ReactJS setup
 
 #node.js v6 LTS
@@ -92,26 +112,6 @@ echo "00 12 * * * root  /usr/local/apache-tomcat-8.5.13/bin/Instop.sh" >> /etc/c
 systemctl restart crond
 
 
-#Oracle 11xe install
-cd -
-cd ..
-PWD=`pwd`
-OCinstall(){
-	yum install -y libaio bc flex;
-	rpm -ivh $PWD/Disk1/oracle-xe-11.2.0-1.0.x86_64.rpm;
-	\cp -b $PWD/oracle-xe /etc/init.d/oracle-xe;
-
-	/etc/init.d/oracle-xe configure;
-
-	echo "export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe" >> /etc/bashrc;
-	echo "export ORACLE_SID=XE" >> /etc/bashrc;
-	echo "export NLS_LANG=\`\$ORACLE_HOME/bin/nls_lang.sh\`" >> /etc/bashrc;
-	echo "export PATH=\$ORACLE_HOME/bin:\$PATH" >> /etc/bashrc;
-	source /etc/bashrc
-	echo "ORACLE x11g 설치가 완료되었습니다.";
-	echo "터미널을 다시 실행해 주세요";
-}
-OCinstall
 ;;
 No) echo "설치를 취소 했습니다."
 
