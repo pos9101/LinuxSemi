@@ -9,7 +9,7 @@ tar -xvf node-v6.10.1-linux-x64.tar
 mkdir /usr/local/node
 mv node-v6.10.1-linux-x64 /usr/local/node/
 rm -rf node-v6.10.1-linux-x64.tar
-printf "export NODE_HOME=/usr/local/node/node-v6.10.1-linux-x64\nexport PATH=\$PATH:\$NODE_HOME/bin" >> /etc/profile
+printf "export NODE_HOME=/usr/local/node/node-v6.10.1-linux-x64\nexport PATH=\$PATH:\$NODE_HOME/bin\n" >> /etc/profile
 source /etc/profile
 
 git --version

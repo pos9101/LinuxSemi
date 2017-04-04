@@ -11,4 +11,8 @@ rm -rf /usr/local/node
 rm -r ~/.npm $ rm -r .npm
 sed -i 's:export NODE_HOME=/usr/local/node/node-v6.10.1-linux-x64::' /etc/profile
 sed -i 's/export PATH\=\$PATH\:\$NODE_HOME\/bin//' /etc/profile
+
+#no generating
+echo "source /etc/profile"
 source /etc/profile
+
