@@ -93,7 +93,9 @@ cd /usr/local
 wget http://mirror.apache-kr.org/tomcat/tomcat-8/v8.5.13/bin/apache-tomcat-8.5.13.tar.gz
 
 tar xzf apache-tomcat-8.5.13.tar.gz
-rm -rf apache-tomcat-8.5.13.tar
+rm -rf apache-tomcat-8.5.13.tar.gz
+
+sed -i 's/8080/8090/g' /usr/local/apache-tomcat-8.5.13/conf/server.xml
 
 
 # cron 예약실행, 예약종료
