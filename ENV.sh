@@ -93,6 +93,8 @@ systemctl restart crond
 
 
 #Oracle 11xe install
+cd -
+cd ..
 PWD=`pwd`
 OCinstall(){
 	yum install -y libaio bc flex;
