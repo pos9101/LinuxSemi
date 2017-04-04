@@ -1,5 +1,10 @@
 #!/bin/bash
 
+echo "NodeJS, ReactJS 삭제를 시작합니다."
+echo "1.삭제 2.취소 "
+select yn in "Yes" "No" ; do
+	case $yn in
+Yes)
 
 #Uninstall ReactJS
 rm -rf react_project
@@ -16,3 +21,12 @@ sed -i 's/export PATH\=\$PATH\:\$NODE_HOME\/bin//' /etc/profile
 echo "source /etc/profile"
 source /etc/profile
 
+;;
+
+No) echo "삭제를 취소 했습니다."
+
+;;
+
+esac
+exit
+done

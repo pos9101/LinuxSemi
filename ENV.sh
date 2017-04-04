@@ -1,12 +1,15 @@
 #!/bin/bash
 
-echo "nodeJS , react_project 내에 reactJS 개발환경 설정을 시작합니다."
-echo "1. 설치 2. 취소 "
+echo "설치 마법사를 시작합니다."
+echo "설치 하시겠습니까? 1.설치 2.취소"
 select yn in "Yes" "No" ; do
+
 	case $yn in
 
+Yes)
 
-#nodeJS install and Adding PATH
+#node JS and ReactJS setup
+
 #node.js v6 LTS
 wget https://nodejs.org/dist/v6.10.1/node-v6.10.1-linux-x64.tar.xz
 xz -d node-v6.10.1-linux-x64.tar.xz
@@ -59,12 +62,59 @@ printf "import React from 'react';\nimport ReactDOM from 'react-dom';\nimport Ap
 
 #mongod --version
 
+
+#tomcat install
+
+
+#톰켓설치
+
+cd /usr/local
+
+wget http://mirror.apache-kr.org/tomcat/tomcat-8/v8.5.13/bin/apache-tomcat-8.5.13.tar.gz
+
+tar xzf apache-tomcat-8.5.13.tar.gz
+
+
+
+# cron 예약실행, 예약종료
+
+touch /usr/local/apache-tomcat-8.5.13/bin/Instart.sh
+touch /usr/local/apache-tomcat-8.5.13/bin/Instop.sh
+
+chmod +x /usr/local/apache-tomcat-8.5.13/bin/In*
+
+echo "\`/usr/local/apache-tomcat-8.5.13/bin/catalina.sh run\`" > /usr/local/apache-tomcat-8.5.13/bin/Instart.sh
+echo "00 09 * * * root  /usr/local/apache-tomcat-8.5.13/bin/Instart.sh" >> /etc/crontab
+
+echo "\`/usr/local/apache-tomcat-8.5.13/bin/catalina.sh stop\`" > /usr/local/apache-tomcat-8.5.13/bin/Instop.sh
+echo "00 12 * * * root  /usr/local/apache-tomcat-8.5.13/bin/Instop.sh" >> /etc/crontab
+
+systemctl restart crond
+
+
+#Oracle 11xe install
+PWD=`pwd`
+OCinstall(){
+	yum install -y libaio bc flex;
+	rpm -ivh $PWD/Disk1/oracle-xe-11.2.0-1.0.x86_64.rpm;
+	\cp -b $PWD/oracle-xe /etc/init.d/oracle-xe;
+
+	/etc/init.d/oracle-xe configure;
+
+	echo "export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe" >> /etc/bashrc;
+	echo "export ORACLE_SID=XE" >> /etc/bashrc;
+	echo "export NLS_LANG=\`\$ORACLE_HOME/bin/nls_lang.sh\`" >> /etc/bashrc;
+	echo "export PATH=\$ORACLE_HOME/bin:\$PATH" >> /etc/bashrc;
+	source /etc/bashrc
+	echo "ORACLE x11g 설치가 완료되었습니다.";
+	echo "터미널을 다시 실행해 주세요";
+}
+OCinstall
+;;
+No) echo "설치를 취소 했습니다."
+
 ;;
 
-No) echo "설치를 취소합니다."
-
-;;
 esac
 exit
 done
-
