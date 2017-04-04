@@ -2,6 +2,7 @@
  This is Linux Semi Project with inseop, sangwoo, dowon 
  There is practice for shell script language
 
+***************************************************************
 ***주의사항******    ******************************************
 Github Project 내에는 Disk1 폴더를 포함하고 있지 않다. 
 Oracle 11g XE 가 wget으로 다운로드가 불가능하게 되었다. oracle.com 홈페이지를 통하여 
@@ -25,7 +26,7 @@ oracle11g.npm.zip 파일을 다운로드 후 압축 풀면 Disk1 폴더 내에 �
 
 
 
-
+*****************************************************************
 =================개별 설치/삭제  방법==========================
   
 
@@ -50,5 +51,5 @@ oracle11g.npm.zip 파일을 다운로드 후 압축 풀면 Disk1 폴더 내에 �
 명령을 사용하여 설치/삭제 할 수 있다.
 
 
-
+***********************************************************************
 CopyLeft by Dowon Koo, Sangwoo Moon, Oksu Park, Inseop Lee  4 April, 2017
