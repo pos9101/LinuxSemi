@@ -12,9 +12,9 @@ Yes)
 
 cd /usr/local
 
-#wget http://mirror.apache-kr.org/tomcat/tomcat-8/v8.5.13/bin/apache-tomcat-8.5.13.tar.gz
+wget http://mirror.apache-kr.org/tomcat/tomcat-8/v8.5.13/bin/apache-tomcat-8.5.13.tar.gz
 
-#tar xzf apache-tomcat-8.5.13.tar.gz
+tar xzf apache-tomcat-8.5.13.tar.gz
 
 
 
@@ -26,10 +26,10 @@ touch /usr/local/apache-tomcat-8.5.13/bin/Instop.sh
 chmod +x /usr/local/apache-tomcat-8.5.13/bin/In*
 
 echo "\`/usr/local/apache-tomcat-8.5.13/bin/catalina.sh run\`" > /usr/local/apache-tomcat-8.5.13/bin/Instart.sh
-echo "26 10 * * * root  /usr/local/apache-tomcat-8.5.13/bin/Instart.sh" >> /etc/crontab
+echo "00 09 * * * root  /usr/local/apache-tomcat-8.5.13/bin/Instart.sh" >> /etc/crontab
 
 echo "\`/usr/local/apache-tomcat-8.5.13/bin/catalina.sh stop\`" > /usr/local/apache-tomcat-8.5.13/bin/Instop.sh
-echo "30 10 * * * root  /usr/local/apache-tomcat-8.5.13/bin/Instop.sh" >> /etc/crontab
+echo "00 12 * * * root  /usr/local/apache-tomcat-8.5.13/bin/Instop.sh" >> /etc/crontab
 
 systemctl restart crond
 

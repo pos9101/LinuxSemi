@@ -8,7 +8,7 @@ Yes)
 
 #톰켓삭제
 
-#rm -rf /usr/local/apache-tomcat*
+rm -rf /usr/local/apache-tomcat*
 
 sed -i '/apache-tomcat-8.5.13/d' /etc/crontab
 
