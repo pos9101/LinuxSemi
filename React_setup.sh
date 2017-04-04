@@ -34,7 +34,7 @@ sed -i 's/&& exit 1\"/&,\n\t"dev-server": "webpack-dev-server"/' package.json
 printf "var webpack = require('webpack');\nmodule.exports = {\n\tentry: './src/index.js',\n\n\toutput: {\n\t\tpath:__dirname + '/public/',\n\t\tfilename: 'bundle.js'\n},\n\ndevServer: {\n\thot:true,\n\tinline: true,\n\thost: '0.0.0.0',\n\tport: 4000,\n\tcontentBase: __dirname + '/public/',\n},\n\nmodule: {\n\tloaders: [\n\t\t{\n\t\t\ttest: /\\.js$/,\n\t\t\tloader: 'babel-loader',\n\t\t\texclude: /node_modules/,\n\t\t\tquery: {\n\t\t\t\tcacheDirectory: true, \n\t\t\t\tpresets: ['es2015', 'react']\n\n\t\t\t}\n\t\t}\n\t]\n},\n\nplugins: [\n\tnew webpack.HotModuleReplacementPlugin()\n\t]\n};" > webpack.config.js
 #10 
 mkdir public
-printf "<"'!'"DOCTYPE html>\n<html>\n<head>\n<meta charset=\"UTF-8\">\n<title>React Hello</title>\n</head>\n<body>\n\t<div id=\"title\">yangssem</div>\n\t<script src=\"bundle.js\"></script>\n</body>\n</html>" > public/index.html
+printf "<"'!'"DOCTYPE html>\n<html>\n<head>\n<meta charset=\"UTF-8\">\n<title>React Hello</title>\n</head>\n<body>\n\t<div id=\"title\">LinuxSemi</div>\n\t<script src=\"bundle.js\"></script>\n</body>\n</html>" > public/index.html
 #11 
 mkdir -p src/components
 printf "import React from 'react';\nclass App extends React.Component{\n\trender() {\n\t\treturn(\n\t\t\t\t<h1> Hello Yangssem</h1>\n\t\t);\n\t}\n}\nexport default App;\n" > src/components/App.js
