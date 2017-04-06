@@ -49,7 +49,7 @@ OCuninstall(){
 	echo "터미널을 다시 실행해 주세요";
 }
 OCuninstall
-
+rm -rf /etc/oratab
 ;;
 
 No) echo "삭제를 취소했습니다."
