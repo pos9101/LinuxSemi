@@ -9,6 +9,8 @@ select yn in "Yes" "No" ; do
 Yes)
 
 #Oracle 11xe install
+rm -rf /etc/oratab
+
 PWD=`pwd`
 OCinstall(){
 	yum install -y libaio bc flex;

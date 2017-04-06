@@ -2,6 +2,7 @@
 clear;
 echo "This is Oracle Install Wizard";
 echo -n "Present Work Directory ==> "
+rm -rf /etc/oratab
 PWD=`pwd`
 echo "$PWD"
 echo;
